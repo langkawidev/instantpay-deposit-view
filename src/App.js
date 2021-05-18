@@ -126,18 +126,24 @@ export const App = ({
       </div>
       {
         !has_verified_bank_account && (
-          <Button
-            label={STRINGS["ACCOUNTS.TAB_VERIFICATION"]}
-            onClick={() => router.push('/verification')}
-          />
+          <div className="btn-wrapper">
+            <Button
+              label={STRINGS["ACCOUNTS.TAB_VERIFICATION"]}
+              onClick={() => router.push('/verification')}
+              className="mb-3"
+            />
+          </div>
         )
       }
       {
         has_verified_bank_account && !uniqueReference && (
-          <Button
-            label="GENERATE REFERENCE NUMBER"
-            onClick={generateUniqueReference}
-          />
+          <div className="btn-wrapper">
+            <Button
+              label="GENERATE REFERENCE NUMBER"
+              onClick={generateUniqueReference}
+              className="mb-3"
+            />
+          </div>
         )
       }
     </div>
