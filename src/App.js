@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Fragment } from "react";
 import { Image } from './components/Image';
 import { Button } from './components/Button';
 import { ExclamationCircleFilled } from '@ant-design/icons';
@@ -12,6 +12,7 @@ export const App = ({
   strings: STRINGS,
   router,
   plugin_url: PLUGIN_URL,
+  children,
 }) => {
 
   const [uniqueReference, setUniqueReference] = useState(null);
@@ -49,6 +50,15 @@ export const App = ({
   const verified_status = 3;
   const verified_bank_account = bank_account.filter(({ status }) => status === verified_status);
   const has_verified_bank_account = !!verified_bank_account.length;
+
+  if (currency !== 'aud') {
+    return (
+      <Fragment>
+        {children}
+      </Fragment>
+    )
+  }
+
   return uniqueReferenceFetched && (
     <div className="withdraw-form-wrapper">
       <div className="withdraw-form">
