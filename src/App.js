@@ -3,6 +3,7 @@ import { Image } from './components/Image';
 import { Button } from './components/Button';
 import { ExclamationCircleFilled } from '@ant-design/icons';
 import axios from 'axios';
+import { IconTitle } from './components/IconTitle';
 
 export const App = ({
   user: { bank_account = [] } = {},
@@ -69,12 +70,26 @@ export const App = ({
         {titleSection}
         {
           !has_verified_bank_account && (
-            <div>In order to make a deposit you are required to complete your verification. Please proceed to verification below.</div>
+            <Fragment>
+              <IconTitle
+                text="Complete verification"
+                iconId="VERIFICATION_BANK_NEW"
+                iconPath={ICONS['VERIFICATION_BANK_NEW']}
+              />
+              <div>In order to make a deposit you are required to complete your verification. Please proceed to verification below.</div>
+            </Fragment>
           )
         }
         {
           has_verified_bank_account && !uniqueReference && (
-            <div>In order to make deposits you are required to generate a reference number. Your reference number should be mentioned when make your deposit within your banks description/memo field.</div>
+            <Fragment>
+              <IconTitle
+                text="Please generate your reference number below"
+                iconId="VERIFICATION_BANK_NEW"
+                iconPath={ICONS['VERIFICATION_BANK_NEW']}
+              />
+              <div>In order to make deposits you are required to generate a reference number. Your reference number should be mentioned when make your deposit within your banks description/memo field.</div>
+            </Fragment>
           )
         }
         {
