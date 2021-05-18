@@ -146,6 +146,17 @@ export const App = ({
           </div>
         )
       }
+      {
+        has_verified_bank_account && uniqueReference && (
+          <div className="btn-wrapper">
+            <Button
+              label="DEPOSIT HISTORY"
+              onClick={() => router.push('transactions?tab=2')}
+              className="mb-3"
+            />
+          </div>
+        )
+      }
     </div>
   );
 };
