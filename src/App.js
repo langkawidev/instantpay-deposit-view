@@ -75,8 +75,9 @@ export const App = ({
                 text="Complete verification"
                 iconId="VERIFICATION_BANK_NEW"
                 iconPath={ICONS['VERIFICATION_BANK_NEW']}
+                className="flex-direction-column"
               />
-              <div>In order to make a deposit you are required to complete your verification. Please proceed to verification below.</div>
+              <div className="text-align-center py-4">In order to make a deposit you are required to complete your verification. Please proceed to verification below.</div>
             </Fragment>
           )
         }
@@ -85,10 +86,11 @@ export const App = ({
             <Fragment>
               <IconTitle
                 text="Please generate your reference number below"
-                iconId="VERIFICATION_BANK_NEW"
-                iconPath={ICONS['VERIFICATION_BANK_NEW']}
+                iconId="GENERATE_REFERENCE_NUMBER"
+                iconPath={ICONS['GENERATE_REFERENCE_NUMBER']}
+                className="flex-direction-column"
               />
-              <div>In order to make deposits you are required to generate a reference number. Your reference number should be mentioned when make your deposit within your banks description/memo field.</div>
+              <div className="text-align-center py-4">In order to make deposits you are required to generate a reference number. Your reference number should be mentioned when make your deposit within your banks description/memo field.</div>
             </Fragment>
           )
         }
@@ -107,10 +109,10 @@ export const App = ({
                   <div>*Reference number:</div>
                 </div>
                 <div className="pl-4">
-                  <div>{instantpay.bankAccountNumber.value}</div>
-                  <div>{instantpay.bankAccountBsb.value}</div>
-                  <div>{instantpay.bankAccountName.value}</div>
-                  <div>{uniqueReference}</div>
+                  <div>{instantpay.bankAccountNumber.value || '-'}</div>
+                  <div>{instantpay.bankAccountBsb.value || '-'}</div>
+                  <div>{instantpay.bankAccountName.value || '-'}</div>
+                  <div>{uniqueReference || '-'}</div>
                 </div>
               </div>
 
