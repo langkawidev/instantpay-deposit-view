@@ -238,7 +238,7 @@ export const App = ({
           !has_verified_bank_account && (
             <Button
               label={STRINGS["ACCOUNTS.TAB_VERIFICATION"]}
-              onClick={() => router.push('/verification')}
+              onClick={() => router.push('/verification?initial_tab=bank&initial_bank_tab=bank')}
               className="mb-3"
             />
           )
@@ -272,13 +272,13 @@ export const App = ({
           !verified_osko_account && (
             <Button
               label={STRINGS["ACCOUNTS.TAB_VERIFICATION"]}
-              onClick={() => router.push('/verification')}
+              onClick={() => router.push('/verification?initial_tab=bank&initial_bank_tab=osko')}
               className="mb-3"
             />
           )
         }
         {
-          verified_osko_account && !uniqueReference && (
+          has_verified_osko_account && !uniqueReference && (
             <Button
               label="GENERATE REFERENCE NUMBER"
               onClick={generateUniqueReference}
@@ -287,7 +287,7 @@ export const App = ({
           )
         }
         {
-          verified_osko_account && uniqueReference && (
+          has_verified_osko_account && uniqueReference && (
             <Button
               label="DEPOSIT HISTORY"
               onClick={() => router.push('transactions?tab=2')}
