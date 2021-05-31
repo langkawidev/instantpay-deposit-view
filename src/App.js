@@ -148,8 +148,8 @@ export const App = ({
                   <div>*Reference number:</div>
                 </div>
                 <div className="pl-4">
-                  <div>{instantpay.pay_id_account_name || '-'}</div>
-                  <div>{instantpay.pay_id_email || '-'}</div>
+                  <div>{instantpay.bankAccountName.value || '-'}</div>
+                  <div>{instantpay.payId.value || '-'}</div>
                   <div>{uniqueReference || '-'}</div>
                 </div>
               </div>
