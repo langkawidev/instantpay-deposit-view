@@ -269,7 +269,7 @@ export const App = ({
     return (
       <Fragment>
         {
-          !verified_osko_account && (
+          !has_verified_osko_account && (
             <Button
               label={STRINGS["ACCOUNTS.TAB_VERIFICATION"]}
               onClick={() => router.push('/verification?initial_tab=bank&initial_bank_tab=osko')}
